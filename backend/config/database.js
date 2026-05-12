@@ -1,6 +1,6 @@
 const mysql = require('mysql2/promise');
 
-// 直接写死数据库配置，绕过所有环境变量问题
+// 直接写死数据库配置，不依赖任何外部文件
 const pool = mysql.createPool({
   host: "yamabiko.proxy.rlwy.net",
   port: 45291,
