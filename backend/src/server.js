@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 // ==========================================
-// 🔥 强制写死数据库配置，绕开 Railway 污染
+// 🔥 以下数据库配置已全部注释，不再使用
 // ==========================================
-process.env.DB_HOST = "yamabiko.proxy.rlwy.net";
-process.env.DB_PORT = "45291";
-process.env.DB_USER = "root";
-process.env.DB_PASSWORD = "ObqUkXoRnFXyVhfHtXSSefqvZBcZsykJ";
-process.env.DB_NAME = "diancan_db";
+// process.env.DB_HOST = "yamabiko.proxy.rlwy.net";
+// process.env.DB_PORT = "45291";
+// process.env.DB_USER = "root";
+// process.env.DB_PASSWORD = "ObqUkXoRnFXyVhfHtXSSefqvZBcZsykJ";
+// process.env.DB_NAME = "diancan_db";
 
 const app = require('./app');
 const config = require('../config');
