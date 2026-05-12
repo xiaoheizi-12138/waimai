@@ -1,7 +1,16 @@
 const mysql = require('mysql2/promise');
-const config = require('../config');
 
-const pool = mysql.createPool(config.database);
+// 直接写死数据库配置，绕过所有环境变量问题
+const pool = mysql.createPool({
+  host: "yamabiko.proxy.rlwy.net",
+  port: 45291,
+  user: "root",
+  password: "ObqUkXoRnFXyVhfHtXSSefqvZBcZsykJ",
+  database: "diancan_db",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
 
 const query = async (sql, params = []) => {
   const [rows] = await pool.execute(sql, params);
