@@ -7,7 +7,7 @@ const getOpenidByCode = async (code) => {
   console.log('config.wechat:', config.wechat);
   console.log('=======================================');
   
-  const { appid, secret } = config.wechat || {};
+const { appid, secret } = config.wx || {};
   
   if (!appid || !secret) {
     throw new Error('微信小程序配置缺失：WX_APPID 或 WX_SECRET');
