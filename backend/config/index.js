@@ -5,11 +5,11 @@ module.exports = {
   port: parseInt(process.env.PORT) || 3000,
   baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`,
   database: {
-    host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT) || 3306,
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'diancan_db',
+    host: "yamabiko.proxy.rlwy.net",
+    port: 45291,
+    user: "root",
+    password: "ObqUkXoRnFXyVhfHtXSSefqvZBcZsykJ",
+    database: "diancan_db",
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
