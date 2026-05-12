@@ -1,8 +1,6 @@
 require('dotenv').config();
 
-// ==========================================
-// 🔥 以下数据库配置已全部注释，不再使用
-// ==========================================
+// 数据库相关代码已注释，使用 database.js 硬编码连接
 // process.env.DB_HOST = "yamabiko.proxy.rlwy.net";
 // process.env.DB_PORT = "45291";
 // process.env.DB_USER = "root";
@@ -12,7 +10,8 @@ require('dotenv').config();
 const app = require('./app');
 const config = require('../config');
 
-const PORT = config.port;
+// 关键修复：强制读取 Railway 的 PORT 环境变量
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log('=================================');
