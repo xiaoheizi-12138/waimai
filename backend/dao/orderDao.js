@@ -1,7 +1,17 @@
 const mysql = require('mysql2/promise');
 const config = require('../config');
 
-const pool = mysql.createPool(config.database);
+// 硬编码数据库连接，修复崩溃
+const pool = mysql.createPool({
+  host: "yamabiko.proxy.rlwy.net",
+  port: 45291,
+  user: "root",
+  password: "ObqUkXoRnFXyVhfHtXSSefqvZBcZsykJ",
+  database: "diancan_db",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
 
 const generateOrderNo = () => {
   const now = new Date();
